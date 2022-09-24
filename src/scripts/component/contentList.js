@@ -117,11 +117,6 @@ class contentList extends HTMLElement {
                 text-align: justify;
                 text-overflow: ellipsis;
                 overflow: hidden;
-                display: -webkit-box;
-                line-height: 16px; /* fallback */
-                max-height: 100px; /* fallback */
-                -webkit-line-clamp: 4; /* number of lines to show */
-                -webkit-box-orient: vertical;
             }
 
             .read-more{
@@ -133,9 +128,37 @@ class contentList extends HTMLElement {
                 justify-content: flex-end;
             }
 
+            @media screen and (max-width: 950px) {
+                .latest {
+                    padding: 0px 80px 0px 80px;
+                }
+            }
+
+            @media screen and (max-width: 850px) {
+                .latest {
+                    padding: 0px 60px 0px 60px;
+                }
+            }
+
+            @media screen and (max-width: 720px) {
+                .latest {
+                    padding: 0px 40px 0px 40px;
+                }
+            }
+
+            @media screen and (max-width: 677px) {
+                .posts {
+                    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+                    gap: 15px;
+                }
+
+                .latest {
+                    padding: 0px 30px 0px 25px;
+                }
+            }
             </style>
             <div class="latest">
-                <h1 class="latest__label">Explore Restaurant</h1>
+                <h1 class="latest__label"  id="main-content">Explore Restaurant</h1>
                 <div class="posts">
                 </div>
             </div>
