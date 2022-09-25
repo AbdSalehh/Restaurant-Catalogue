@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable require-jsdoc */
+
 class headerBar extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -30,7 +33,9 @@ class headerBar extends HTMLElement {
                     sans-serif;
             }
 
+
             nav li a {
+                padding: 9px;
                 display: inline-block;
                 font-size: 18px;
                 font-weight: 600;
@@ -47,7 +52,7 @@ class headerBar extends HTMLElement {
 
             .name {
                 color: #1B2631;
-                font-size: 35px;
+                font-size: 39px;
                 font-weight:bolder;
                 text-decoration: none;
             }
@@ -64,7 +69,7 @@ class headerBar extends HTMLElement {
             }
 
             #hamburger {
-                font-size: 32px;
+                font-size: 40px;
                 text-decoration: none;
                 color: black;
                 display: none;
@@ -94,16 +99,16 @@ class headerBar extends HTMLElement {
                 }
 
                 nav ul {
-                    top: 74px;
+                    top: 84.2px;
                     width: 100%;
                     height: 100%;
                     position: fixed;
                     background: #fff;
-                    left: -100%;
+                    transition: transform 0.3s ease-in-out;
                 }
 
                 nav ul.open {
-                    left: 20%;
+                    transform: translateX(1000px);
                 }
 
                 nav ul li {
@@ -116,7 +121,7 @@ class headerBar extends HTMLElement {
                 nav ul li a {
                     font-size: 20px;
                     color: black;
-                    margin-left:10px;
+                    margin-left: 5px;
                 }
             }
 
@@ -140,7 +145,7 @@ class headerBar extends HTMLElement {
                 <a id="hamburger" href="#">☰</a>
             </nav>
         `;
-  }
+    }
 }
 
 customElements.define("header-bar", headerBar);

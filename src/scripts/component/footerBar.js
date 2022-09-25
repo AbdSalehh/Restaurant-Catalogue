@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable require-jsdoc */
+/* eslint-disable max-len */
+
 class footerBar extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -180,6 +184,7 @@ class footerBar extends HTMLElement {
         @media screen and (max-width: 677px) {
             .container {
                 padding: 0px 10px 0px 10px;
+                flex-direction: column;
             }
         }
         </style>

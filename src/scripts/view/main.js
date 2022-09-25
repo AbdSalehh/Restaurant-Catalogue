@@ -1,12 +1,14 @@
-import restaurants from '../data/DATA.json';
+/* eslint-disable linebreak-style */
+/* eslint-disable max-len */
+
+import restaurants from "../data/DATA.json";
 
 const main = () => {
-
-    const hamburgerButtonElement = document.querySelector('#hamburger');
-    const drawerElement = document.querySelector('#navigation');
+    const hamburgerButtonElement = document.querySelector("#hamburger");
+    const drawerElement = document.querySelector("#navigation");
 
     const renderRestaurant = () => {
-        restaurants.restaurants.forEach(restaurant => {
+        restaurants.restaurants.forEach((restaurant) => {
             const restoList = document.querySelector(".posts");
             restoList.innerHTML += `
                 <article class="post-item" >
@@ -21,15 +23,15 @@ const main = () => {
                 </article>
             `;
         });
-    }
+    };
 
-    hamburgerButtonElement.addEventListener('click', event => {
-        drawerElement.classList.toggle('open');
+    hamburgerButtonElement.addEventListener("click", (event) => {
+        drawerElement.classList.toggle("open");
         event.stopPropagation();
         event.preventDefault();
     });
 
     renderRestaurant();
-}
+};
 
 export default main;

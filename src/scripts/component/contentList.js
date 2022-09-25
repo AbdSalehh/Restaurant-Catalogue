@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable require-jsdoc */
+/* eslint-disable max-len */
+
 class contentList extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -7,19 +11,19 @@ class contentList extends HTMLElement {
         this.innerHTML = `
             <style>
 
-            .latest {
+            .content {
                 padding: 0px 100px 0px 100px;
                 width: 100%;
                 margin: 60px auto;
                 text-align: center;
             }
 
-            .latest__label {
+            .content__label {
                 font-size: 32px;
                 font-weight: bold;
             }
 
-            .latest__label::after {
+            .content__label::after {
                 content: '';
                 margin-top: 16px;
                 display: block;
@@ -108,6 +112,7 @@ class contentList extends HTMLElement {
             .post-item__title a {
                 text-decoration: none;
                 color: inherit;
+                padding: 10px 0 10px 0;
             }
 
             .post-item__description {
@@ -119,29 +124,20 @@ class contentList extends HTMLElement {
                 overflow: hidden;
             }
 
-            .read-more{
-                display: flex;
-                margin-top: 10px;
-                font-size: 14px;
-                font-weight: 600;
-                color: #3498DB;
-                justify-content: flex-end;
-            }
-
             @media screen and (max-width: 950px) {
-                .latest {
+                .content {
                     padding: 0px 80px 0px 80px;
                 }
             }
 
             @media screen and (max-width: 850px) {
-                .latest {
+                .content {
                     padding: 0px 60px 0px 60px;
                 }
             }
 
             @media screen and (max-width: 720px) {
-                .latest {
+                .content {
                     padding: 0px 40px 0px 40px;
                 }
             }
@@ -150,15 +146,17 @@ class contentList extends HTMLElement {
                 .posts {
                     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
                     gap: 15px;
+                    grid-row-gap: 25px;
                 }
 
-                .latest {
+                .content {
                     padding: 0px 30px 0px 25px;
                 }
             }
+
             </style>
-            <div class="latest">
-                <h1 class="latest__label"  id="main-content">Explore Restaurant</h1>
+            <div class="content">
+                <h1 class="content__label" id="main-content">Explore Restaurant</h1>
                 <div class="posts">
                 </div>
             </div>

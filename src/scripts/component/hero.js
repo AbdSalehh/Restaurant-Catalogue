@@ -1,3 +1,7 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable require-jsdoc */
+/* eslint-disable max-len */
+
 class Hero extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -37,7 +41,7 @@ class Hero extends HTMLElement {
                 }
 
                 button{
-                    padding: 10px 20px 10px 20px;
+                    padding: 13px 25px 13px 25px;
                     outline: none;
                     background-color: transparent;
                     border: 1px solid #fff;
@@ -58,12 +62,24 @@ class Hero extends HTMLElement {
                     .hero__title, .hero__tagline {
                         padding: 0 20px 0 20px;
                     }
+                }
+
+                @media screen and (max-width: 588px) {
+                    .hero__title {
+                        font-size: 25px;
+                    }
+
+                    .hero__tagline {
+                        font-size: 18px;
+                    }
+                }
+
             </style>
             <div class="hero">
                 <div class="hero__inner">
                 <h1 class="hero__title">Selamat datang di Website Restoran</h1>
                 <p class="hero__tagline">Disini kami menyediakan restoran dari beberapa wilayah di Indonesia yang bisa anda lihat dibawah ini</p>
-                <button >Explore</button>
+                <button>Explore</button>
                 </div>
             </div>
           `;

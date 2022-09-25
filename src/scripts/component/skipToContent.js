@@ -1,3 +1,6 @@
+/* eslint-disable linebreak-style */
+/* eslint-disable require-jsdoc */
+
 class skipToContent extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -11,7 +14,7 @@ class skipToContent extends HTMLElement {
                     left: 10px;
                     background: #fff;
                     color: #000;
-                    padding: 8px 15px;
+                    padding: 10px 15px;
                     z-index: 200;
                     transition: all 0.3s ease-in-out;
                     text-decoration: none;
