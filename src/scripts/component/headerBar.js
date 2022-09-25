@@ -1,5 +1,6 @@
 /* eslint-disable linebreak-style */
 /* eslint-disable require-jsdoc */
+/* eslint-disable max-len */
 
 class headerBar extends HTMLElement {
     connectedCallback() {
@@ -105,13 +106,14 @@ class headerBar extends HTMLElement {
                     height: 100%;
                     position: fixed;
                     background: #fff;
-                    transform: translate(1000px,0);
-                    transition: transform 0.3s ease-in-out;
+                    right: -100%;
+                    transition: all 0.3s ease;
                 }
 
                 nav ul.open {
-                    transform: translate(20%,0);
-                    transition: transform 0.3s ease-in-out;
+                    display: block;
+                    right: 0;
+                    transition: right 0.3s ease;
                 }
 
                 nav ul li {
@@ -125,7 +127,13 @@ class headerBar extends HTMLElement {
                     font-size: 20px;
                     color: black;
                     margin-left: 5px;
+                    display: none;
                 }
+
+                nav ul.open li a {
+                    display: block;
+                }
+
             }
 
             @media screen and (max-width: 677px) {
@@ -140,12 +148,12 @@ class headerBar extends HTMLElement {
                     <i class="fa fa-utensils"></i>
                     <a class="name">Hunger Apps</a>
                 </div>
+                <a id="hamburger" aria-label="navigation-menu" href="">☰</a>
                 <ul class="nav" id="navigation">
                     <li><a href="">Home</a></li>
                     <li><a href="#">Favorite</a></li>
                     <li><a href="https://github.com/Saleh-387/">About Us</a></li>
                 </ul>
-                <a id="hamburger" aria-label="navigation-menu" href="#">☰</a>
             </nav>
         `;
     }

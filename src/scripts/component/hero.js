@@ -58,6 +58,11 @@ class Hero extends HTMLElement {
                     color: #000;
                 }
 
+                button:focus {
+                    background-color: #fff;
+                    color: #000;
+                }
+                
                 @media screen and (max-width: 820px) {
                     .hero__title, .hero__tagline {
                         padding: 0 20px 0 20px;
