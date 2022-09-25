@@ -33,7 +33,6 @@ class headerBar extends HTMLElement {
                     sans-serif;
             }
 
-
             nav li a {
                 padding: 9px;
                 display: inline-block;
@@ -70,10 +69,12 @@ class headerBar extends HTMLElement {
 
             #hamburger {
                 font-size: 40px;
+                padding: 7px;
                 text-decoration: none;
                 color: black;
                 display: none;
             }
+
             @media screen and (max-width: 950px) {
                 nav {
                     padding: 15px 80px 15px 80px;
@@ -94,21 +95,23 @@ class headerBar extends HTMLElement {
 
             @media screen and (max-width: 680px) {
 
-                #hamburger  {
+                #hamburger {
                     display: block;
                 }
 
                 nav ul {
-                    top: 84.2px;
+                    top: 98px;
                     width: 100%;
                     height: 100%;
                     position: fixed;
                     background: #fff;
+                    transform: translate(1000px,0);
                     transition: transform 0.3s ease-in-out;
                 }
 
                 nav ul.open {
-                    transform: translateX(1000px);
+                    transform: translate(20%,0);
+                    transition: transform 0.3s ease-in-out;
                 }
 
                 nav ul li {
@@ -142,7 +145,7 @@ class headerBar extends HTMLElement {
                     <li><a href="#">Favorite</a></li>
                     <li><a href="https://github.com/Saleh-387/">About Us</a></li>
                 </ul>
-                <a id="hamburger" href="#">☰</a>
+                <a id="hamburger" aria-label="navigation-menu" href="#">☰</a>
             </nav>
         `;
     }

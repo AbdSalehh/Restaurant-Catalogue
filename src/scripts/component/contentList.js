@@ -34,7 +34,7 @@ class contentList extends HTMLElement {
             * post
             */
 
-            .posts {
+            .posts, .popular-posts {
                 margin: 32px auto auto;
                 text-align: left;
                 display: grid;
@@ -42,6 +42,15 @@ class contentList extends HTMLElement {
                 gap: 20px;
             }
 
+            .popular-posts {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 30px;
+            }
+
+            .content .popular {
+                margin-top: 40px;
+            }
+            
             /*
             * post item
             */
@@ -143,7 +152,7 @@ class contentList extends HTMLElement {
             }
 
             @media screen and (max-width: 677px) {
-                .posts {
+                .posts, .popular-posts {
                     grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
                     gap: 15px;
                     grid-row-gap: 25px;
@@ -156,8 +165,11 @@ class contentList extends HTMLElement {
 
             </style>
             <div class="content">
-                <h1 class="content__label" id="main-content">Explore Restaurant</h1>
+                <h1 class="content__label" id="main-content">Explore Restaurants</h1>
                 <div class="posts">
+                </div>
+                <h1 class="content__label popular" id="main-content">Popular Restaurants</h1>
+                <div class="popular-posts">
                 </div>
             </div>
         `;
