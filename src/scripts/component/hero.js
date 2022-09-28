@@ -40,7 +40,7 @@ class Hero extends HTMLElement {
                     font-weight: 300;
                 }
 
-                button{
+                .hero button{
                     padding: 13px 25px 13px 25px;
                     outline: none;
                     background-color: transparent;
@@ -53,12 +53,12 @@ class Hero extends HTMLElement {
                     margin-top: 30px;
                 }
 
-                button:hover{
+                .hero button:hover{
                     background-color: #fff;
                     color: #000;
                 }
 
-                button:focus {
+                .hero button:focus {
                     background-color: #fff;
                     color: #000;
                 }

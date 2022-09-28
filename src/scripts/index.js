@@ -6,7 +6,22 @@ import "./component/headerBar.js";
 import "./component/hero.js";
 import "./component/contentList.js";
 import "./component/footerBar.js";
+import App from "./views/app";
 
-import main from "./view/main";
+import main from "./views/main";
+
+const app = new App({
+    button: document.querySelector("#hamburger"),
+    drawer: document.querySelector("#navigation"),
+    content: document.querySelector('main'),
+});
+
+window.addEventListener("hashchange", () => {
+    app.renderPage();
+});
+
+window.addEventListener("load", () => {
+    app.renderPage();
+});
 
 document.addEventListener("DOMContentLoaded", main);

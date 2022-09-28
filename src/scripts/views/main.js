@@ -1,12 +1,7 @@
-/* eslint-disable linebreak-style */
 /* eslint-disable max-len */
-
 import restaurants from "../data/DATA.json";
 
 const main = () => {
-    const hamburgerButtonElement = document.querySelector("#hamburger");
-    const drawerElement = document.querySelector("#navigation");
-
     const renderRestaurant = () => {
         restaurants.restaurants.forEach((restaurant) => {
             const restoList = document.querySelector(".posts");
@@ -40,12 +35,6 @@ const main = () => {
             }
         });
     };
-
-    hamburgerButtonElement.addEventListener("click", (event) => {
-        drawerElement.classList.toggle("open");
-        event.stopPropagation();
-        event.preventDefault();
-    });
 
     renderRestaurant();
 };

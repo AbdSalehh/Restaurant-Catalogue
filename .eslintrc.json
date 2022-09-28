@@ -3,7 +3,7 @@
         "browser": true,
         "es2021": true
     },
-    "extends": "google",
+    "extends": "airbnb-base",
     "overrides": [
     ],
     "parserOptions": {
@@ -17,6 +17,10 @@
         "no-else-return"   : 1,
         "semi"             : [1, "always"],
         "space-unary-ops"  : 2,
-        "no-console": 0
+        "no-console": 0,
+        "linebreak-style": 0,
+        "global-require": 0,
+        "eslint linebreak-style": [0, "error", "windows"],
+        "no-underscore-dangle": "off"
     }
 }
