@@ -4,16 +4,15 @@ import "../styles/main.css";
 import "./component/skipToContent.js";
 import "./component/headerBar.js";
 import "./component/hero.js";
+import "./component/restaurantDetail.js";
 import "./component/contentList.js";
 import "./component/footerBar.js";
 import App from "./views/app";
 
-import main from "./views/main";
-
 const app = new App({
     button: document.querySelector("#hamburger"),
     drawer: document.querySelector("#navigation"),
-    content: document.querySelector('main'),
+    content: document.querySelector("main"),
 });
 
 window.addEventListener("hashchange", () => {
@@ -23,5 +22,3 @@ window.addEventListener("hashchange", () => {
 window.addEventListener("load", () => {
     app.renderPage();
 });
-
-document.addEventListener("DOMContentLoaded", main);
