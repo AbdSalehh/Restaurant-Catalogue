@@ -10,7 +10,7 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-     "rules": {
+    "rules": {
         "quotes": ["error", "double"],
         "consistent-return": 2,
         "indent"           : [1, 4],

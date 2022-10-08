@@ -36,11 +36,16 @@ class restaurantDetail extends HTMLElement {
                 position: relative;
             }
 
-            .restaurant_img .like_button{
+            .restaurant_img .button{
+                width: 100%;
+            }
+
+            .restaurant_img .like_button {
                 display: flex;
                 justify-content: right;
                 align-items: right;
             }
+
             .restaurant_img .like {
                 position: absolute;
                 z-index: 4;
@@ -52,6 +57,10 @@ class restaurantDetail extends HTMLElement {
                 margin-right: 10px;
             }
 
+            .red {
+                color: red;
+            }
+            
             .restaurant_img .like i {
                 font-size: 20px;
                 font-weight: bold;
@@ -220,6 +229,118 @@ class restaurantDetail extends HTMLElement {
 
             .submit button:hover, .submit button:focus {
                 background-color: #2E4053;
+            }
+
+            @media screen and (max-width: 1160px) {
+                .restaurant_img {
+                    width: 50%;
+                    max-height: 380px;
+                }
+
+                .restaurant_detail {
+                    width: 50%;
+                }
+            }
+
+            @media screen and (max-width: 1112px) {
+                .restaurant_item{
+                    flex-direction: column;
+                }
+
+                .restaurant_img {
+                    width: 100%;
+                    height: 400px;
+                }
+
+                .restaurant_img img{
+                    height: 100%;
+                    position: block;
+                }
+
+                .restaurant_detail {
+                    width: 100%;
+                    padding: 0;
+                    margin-top: 20px;
+                }
+            }
+
+            @media screen and (max-width: 950px) {
+                .detail_container {
+                    padding: 120px 80px 120px 80px;
+                }
+            }
+
+            
+            @media screen and (max-width: 850px) {
+                .detail_container {
+                    padding: 120px 60px 120px 60px;
+                }
+            }
+
+            @media screen and (max-width: 720px) {
+                .detail_container {
+                    padding: 120px 40px 120px 40px;
+                }
+            }
+
+            @media screen and (max-width: 708px) {
+                .restaurant_img {
+                    height: 300px;
+                }
+            }
+
+            @media screen and (max-width: 677px) {
+                .detail_container {
+                    padding: 120px 30px 120px 30px;
+                }
+            }
+
+            @media screen and (max-width: 650px) {
+                .add_review .submit {
+                    width: 75%;
+                }
+
+                .add_review input, textarea {
+                    width: 75%;
+                }
+
+                .add_review input {
+                    max-width: 50%;
+                }
+
+                .add_review textarea {
+                    max-width: 75%;
+                }
+            }
+
+            @media screen and (max-width: 530px) {
+                .restaurant_img {
+                    height: 250px;
+                }
+            }
+
+            @media screen and (max-width: 488px) {
+                .add_review .submit {
+                    width: 100%;
+                }
+
+                .add_review input, textarea {
+                    width: 100%;
+                }
+
+                .add_review input {
+                    max-width: 75%;
+                }
+
+                .add_review textarea {
+                    max-width: 100%;
+                }
+            }
+
+            @media screen and (max-width: 420px) {
+                .restaurant_img {
+                    height: 200px;
+                }
             }
 
             </style>

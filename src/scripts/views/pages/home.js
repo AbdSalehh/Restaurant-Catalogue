@@ -11,6 +11,8 @@ const Home = {
     async afterRender() {
         const restaurants = await RestaurantDbSource.restaurantList();
         const restoList = document.querySelector(".posts");
+        const hero = document.querySelector("hero-bar");
+        hero.style.display = "block";
         const popularRestoList = document.querySelector(".popular-posts");
         restaurants.forEach((restaurant) => {
             if (restaurant.rating < 4.8) {

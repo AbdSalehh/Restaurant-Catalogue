@@ -2,12 +2,10 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 
 module.exports = {
     entry: {
         app: path.resolve(__dirname, "src/scripts/index.js"),
-    // sw: path.resolve(__dirname, 'src/scripts/sw.js'),
     },
     output: {
         filename: "[name].bundle.js",
@@ -37,14 +35,13 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/,
-                dependency: {not: ["url"]},
+                dependency: { not: ["url"] },
                 type: "asset/resource",
                 use: [
                     {
                         loader: "file-loader",
                     },
                 ],
-                type: "javascript/auto",
             },
         ],
     },
@@ -62,8 +59,7 @@ module.exports = {
             ],
         }),
         new FaviconsWebpackPlugin({
-            logo: path.resolve(__dirname, "src/public/images/logo.png"),
+            logo: path.resolve(__dirname, "src/public/images/logo-transparant.png"),
         }),
-        new CleanWebpackPlugin(),
     ],
 };

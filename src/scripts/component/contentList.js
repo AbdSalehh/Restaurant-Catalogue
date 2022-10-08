@@ -371,7 +371,7 @@ class contentList extends HTMLElement {
                 </div>
             </div>
             <div class="content">
-                <h1 class="content__label" id="main-content">Our Menu</h1>
+                <h1 class="content__label menuLabel" id="main-content">Our Menu</h1>
                 <div class="service">
                     <div class="service-item">
                         <div class="icon"><i class="fa-solid fa-bowl-food"></i></div>
