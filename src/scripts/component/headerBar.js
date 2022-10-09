@@ -151,7 +151,7 @@ class headerBar extends HTMLElement {
                 <a id="hamburger" aria-label="navigation-menu" href="">☰</a>
                 <ul class="nav" id="navigation">
                     <li><a href="#/home">Home</a></li>
-                    <li><a href="#/favorite">Favorite</a></li>
+                    <li><a href="#/favorite" class="fav-nav">Favorite</a></li>
                     <li><a href="https://github.com/Saleh-387/">About Us</a></li>
                 </ul>
             </nav>

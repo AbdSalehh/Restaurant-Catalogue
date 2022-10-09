@@ -24,7 +24,7 @@ class skipToContent extends HTMLElement {
                     top: 10px;
                 }
             </style>
-            <a href="#main-content" class="skip-link">Skip to main content</a>
+            <a href="#main-post" class="skip-link">Skip to main content</a>
         `;
     }
 }

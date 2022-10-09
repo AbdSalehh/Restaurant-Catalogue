@@ -57,6 +57,10 @@ class restaurantDetail extends HTMLElement {
                 margin-right: 10px;
             }
 
+            .restaurant_img .like:focus i{
+                border: 2px solid red;
+            }
+
             .red {
                 color: red;
             }
@@ -134,8 +138,8 @@ class restaurantDetail extends HTMLElement {
             .card_review {
                 margin-top: 20px;
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 20px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
             }
 
             .review_item {
@@ -270,6 +274,11 @@ class restaurantDetail extends HTMLElement {
                 }
             }
 
+            @media screen and (max-width: 879px) {
+                .card_review {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+            }
             
             @media screen and (max-width: 850px) {
                 .detail_container {
@@ -310,6 +319,12 @@ class restaurantDetail extends HTMLElement {
 
                 .add_review textarea {
                     max-width: 75%;
+                }
+            }
+
+            @media screen and (max-width: 545px) {
+                .card_review {
+                    grid-template-columns: repeat(1, 1fr);
                 }
             }
 

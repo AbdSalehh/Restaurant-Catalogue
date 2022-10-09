@@ -1,7 +1,3 @@
-/* eslint-disable linebreak-style */
-/* eslint-disable require-jsdoc */
-/* eslint-disable max-len */
-
 class contentList extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -34,21 +30,12 @@ class contentList extends HTMLElement {
             * post
             */
 
-            .posts, .popular-posts {
+            .posts{
                 margin: 32px auto auto;
                 text-align: left;
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 20px;
-            }
-
-            .popular-posts {
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-                gap: 20px;
-            }
-
-            .content .popular {
-                margin-top: 40px;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 18px 16px;
             }
             
             /*
@@ -180,6 +167,14 @@ class contentList extends HTMLElement {
                 margin-left: 20px;
             }
 
+            .card-content p{
+                overflow: hidden;
+                text-overflow: ellipsis;
+                display: -webkit-box;
+                -webkit-line-clamp: 6;
+                -webkit-box-orient: vertical;
+            }
+
             .middle .card-content {
                 margin-left: 0;
                 margin-right: 20px;
@@ -218,7 +213,7 @@ class contentList extends HTMLElement {
             .service{
                 width: 100%;
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                grid-template-columns: repeat(3, 1fr);
                 gap: 20px;
             }
 
@@ -258,6 +253,34 @@ class contentList extends HTMLElement {
                 font-size: 15px;
             }
 
+            .skeleton {
+                background: #c1c1c1;
+                min-height: 30px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .skeleton::before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to right, transparent, #d3d3d3, transparent);
+                transform: translate(-100%);
+                animation: loading 1s linear infinite alternate;
+            }
+
+            .renderImg img {
+                width: 1px;
+                height: 1px;
+            }
+
+            @keyframes loading {
+                100% {
+                    transform: translate(100%);
+                }
+            }
             @media screen and (max-width: 1149px) {
                 .card-content p{
                     overflow: hidden;
@@ -293,6 +316,10 @@ class contentList extends HTMLElement {
                 .another-restaurants{
                     padding: 20px 80px 20px 80px;
                 }
+
+                .posts, .service{
+                    grid-template-columns: repeat(2, 1fr);
+                }
             }
 
             @media screen and (max-width: 850px) {
@@ -316,11 +343,6 @@ class contentList extends HTMLElement {
             }
 
             @media screen and (max-width: 677px) {
-                .posts, .popular-posts {
-                    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
-                    gap: 15px;
-                    grid-row-gap: 25px;
-                }
 
                 .content {
                     padding: 0px 30px 0px 25px;
@@ -331,64 +353,50 @@ class contentList extends HTMLElement {
                 }
             }
 
+            @media screen and (max-width: 566px) {
+                .posts{
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+
+            @media screen and (max-width: 500px) {
+                .service{
+                    grid-template-columns: repeat(1, 1fr);
+                }
+            }
+
             </style>
             <div class="content">
-                <h1 class="content__label" id="main-content">Explore Restaurants</h1>
+                <h1 class="content__label" id="main-content main-post">Explore Restaurants</h1>
                 <div class="posts"></div>
-                <h1 class="content__label popular" id="main-content">Popular Restaurants</h1>
-                <div class="popular-posts"></div>
             </div>
             <div class="another-restaurants">
-                <div class="recommendation">
-                    <img src="https://cdn-2.tstatic.net/wow/foto/bank/images/restoran-locavore_20170304_130002.jpg" alt="recommendation">
-                    <div class="card-content">
-                        <h2>Restoran BBQ Ala Korea</h2>
-                        <div class="post-item__date">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-                        <div class="recom-location"><i class="fa-solid fa-map-marker-alt"></i> Jl. Raya Cikarang, Bekasi</div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                        <button>Read More</button>
-                    </div>
-                </div>
-                <div class="recommendation middle">
-                    <img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1634025439/01g8whc9apg4cbtvwce775jb0q.jpg" alt="recommendation">
-                    <div class="card-content">
-                        <h2>Restoran BBQ Ala Korea</h2>
-                        <div class="post-item__date">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
-                        <div class="recom-location"><i class="fa-solid fa-map-marker-alt"></i> Jl. Raya Cikarang, Bekasi</div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                        <button>Read More</button>
-                    </div>
-                </div>
-                <div class="recommendation">
-                    <img src="https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1634025439/01g8wh98yj8ng8pzvcy3mjm193.jpg" alt="recommendation">
-                    <div class="card-content">
-                        <h2>Restoran BBQ Ala Korea</h2>
-                        <div class="post-item__date">Rating : <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
-                        <div class="recom-location"><i class="fa-solid fa-map-marker-alt"></i> Jl. Raya Cikarang, Bekasi</div>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                        <button>Read More</button>
-                    </div>
-                </div>
+                <div class="recommendation first"></div>
+                <div class="recommendation middle"></div>
+                <div class="recommendation third"></div>
             </div>
             <div class="content">
                 <h1 class="content__label menuLabel" id="main-content">Our Menu</h1>
                 <div class="service">
                     <div class="service-item">
                         <div class="icon"><i class="fa-solid fa-bowl-food"></i></div>
-                        <h2>Food Delivery</h2>
+                        <h2>Japanese Food</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard .</p>
                     </div>
                     <div class="service-item">
                         <div class="icon"><i class="fa-solid fa-wine-glass"></i></div>
-                        <h2>Food Delivery</h2>
+                        <h2>Fresh drinks</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard .</p>
                     </div>
                     <div class="service-item">
                         <div class="icon"><i class="fa-solid fa-fish"></i></div>
-                        <h2>Food Delivery</h2>
+                        <h2>Seafood</h2>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard .</p>
                     </div>
                 </div>  
+            </div>
+            <div class="renderImg">
+                <img src="../../../public/images/error.webp" alt="404">
             </div>
         `;
     }

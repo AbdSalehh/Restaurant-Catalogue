@@ -1,13 +1,11 @@
 import CONFIG from "../../globals/config";
 
 const createRestaurantDetailTemplate = (restaurant) => `
-    <div class="detail">
+    <div class="detail" id="main-post">
         <div class="restaurant_item">
             <div class="restaurant_img">
                 <div class="button">
-                    <div class="like_button">
-                        
-                    </div>
+                    <div class="like_button"></div>
                 </div>
                 <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Restaurant Image">
             </div>
@@ -61,11 +59,10 @@ const createRestaurantDetailTemplate = (restaurant) => `
 const createRestaurantListTemplate = (restaurant) => `
     <article class="post-item" >
         <p class="location">Kota. ${restaurant.city}</p>
-        <img class="post-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}"
-            tabindex="0" alt="Restoran ${restaurant.name} Kota ${restaurant.city}">
+        <img class="post-item__thumbnail" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Restoran ${restaurant.name} Kota ${restaurant.city}">
         <div class="post-item__content">
             <p class="post-item__date">Rating : <i class="fa-solid fa-star"></i><span> ${restaurant.rating}</span></p>
-            <h1 class="post-item__title"><a href="/#/detail/${restaurant.id}" tabindex="-1">${restaurant.name}</a></h1>
+            <h1 class="post-item__title"><a href="/#/detail/${restaurant.id}">${restaurant.name}</a></h1>
             <p class="post-item__description">${restaurant.description}</p>
         </div>
     </article>

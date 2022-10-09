@@ -12,15 +12,9 @@
     },
     "rules": {
         "quotes": ["error", "double"],
-        "consistent-return": 2,
         "indent"           : [1, 4],
-        "no-else-return"   : 1,
-        "semi"             : [1, "always"],
-        "space-unary-ops"  : 2,
-        "no-console": 0,
         "linebreak-style": 0,
-        "global-require": 0,
-        "eslint linebreak-style": [0, "error", "windows"],
-        "no-underscore-dangle": "off"
+        "no-underscore-dangle": "off",
+        "import/extensions": { "js": "always"}
     }
 }

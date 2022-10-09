@@ -1,4 +1,5 @@
 import API_ENDPOINT from "../globals/api-endpoint";
+import errorPage from "../views/pages/errorPage";
 
 class RestaurantDbSource {
     static async restaurantList() {
@@ -8,9 +9,13 @@ class RestaurantDbSource {
     }
 
     static async detailRestaurant(id) {
-        const response = await fetch(API_ENDPOINT.DETAIL(id));
-        const responseJson = await response.json();
-        return responseJson.restaurant;
+        try {
+            const response = await fetch(API_ENDPOINT.DETAIL(id));
+            const responseJson = await response.json();
+            return responseJson.restaurant;
+        } catch (error) {
+            errorPage(error.message);
+        }
     }
 
     static async postReviewRestaurant(data) {

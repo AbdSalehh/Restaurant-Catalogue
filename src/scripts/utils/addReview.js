@@ -8,13 +8,9 @@ const postReview = async ({ url, name, review }) => {
         review,
     };
 
-    try {
-        const reviewContainer = document.querySelector(".card_review");
-        const data = await RestaurantDbSource.postReviewRestaurant(userInputData);
-        reviewContainer.innerHTML = data.customerReviews.map((reviewData) => cardReview(reviewData)).join("");
-    } catch (error) {
-        alert(error.message);
-    }
+    const reviewContainer = document.querySelector(".card_review");
+    const restaurant = await RestaurantDbSource.postReviewRestaurant(userInputData);
+    reviewContainer.innerHTML = restaurant.customerReviews.map((reviewData) => cardReview(reviewData)).join("");
 };
 
 export default postReview;
