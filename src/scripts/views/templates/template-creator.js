@@ -1,7 +1,7 @@
-import CONFIG from "../../globals/config";
+import CONFIG from "../../globals/config.js";
 
 const createRestaurantDetailTemplate = (restaurant) => `
-    <div class="detail" id="main-post">
+    <div class="detail">
         <div class="restaurant_item">
             <div class="restaurant_img">
                 <div class="button">
@@ -45,7 +45,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
         </div>
     </div>
     <form class="add_review">
-        <h2>Tambahkan Review</h2>
+        <h2>Add Review</h2>
         <label for="name">Name</label>
         <input type="text" name="name" placeholder="Name" class="inputName" />
         <label for="review">Review</label>

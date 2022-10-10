@@ -15,6 +15,10 @@
         "indent"           : [1, 4],
         "linebreak-style": 0,
         "no-underscore-dangle": "off",
-        "import/extensions": { "js": "always"}
+        "import/no-extraneous-dependencies": ["error", {"optionalDependencies": false}],
+        "import/extensions": ["error", "ignorePackages", {"js" : "always"}],
+        "no-console": "off",
+        "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
+        "no-restricted-globals": ["error", "event", "fdescribe"]
     }
 }

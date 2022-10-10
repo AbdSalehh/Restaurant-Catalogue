@@ -8,15 +8,15 @@ import "./component/restaurantDetail.js";
 import "./component/contentList.js";
 import "./component/footerBar.js";
 import "./component/loader.js";
-import App from "./views/app";
-import swRegister from "./utils/sw-register";
+import App from "./views/app.js";
+import swRegister from "./utils/sw-register.js";
 
 const app = new App({
     button: document.querySelector("#hamburger"),
     drawer: document.querySelector("#navigation"),
     content: document.querySelector("main"),
     nav: document.querySelector("#navigation>li>a"),
-    favNav: document.querySelector(".fav-nav")
+    favNav: document.querySelector(".fav-nav"),
 });
 
 window.addEventListener("hashchange", () => {

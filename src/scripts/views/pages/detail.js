@@ -1,8 +1,8 @@
-import UrlParser from "../../routes/url-parser";
-import RestaurantDbSource from "../../data/restaurantdb-source";
-import postReview from "../../utils/addReview";
-import { createRestaurantDetailTemplate } from "../templates/template-creator";
-import LikeButtonInitiator from "../../utils/like-button-initiator";
+import UrlParser from "../../routes/url-parser.js";
+import RestaurantDbSource from "../../data/restaurantdb-source.js";
+import postReview from "../../utils/addReview.js";
+import { createRestaurantDetailTemplate } from "../templates/template-creator.js";
+import LikeButtonInitiator from "../../utils/like-button-initiator.js";
 
 const Detail = {
     async render() {
@@ -16,9 +16,15 @@ const Detail = {
         const resto = await RestaurantDbSource.detailRestaurant(url.id);
         const detailContainer = document.querySelector(".detail_container");
         const hero = document.querySelector("hero-bar");
+        const skipLink = document.querySelector("skip-to-content>a");
+        const mainContent = document.querySelector("#main-post");
+
+        mainContent.setAttribute("tabindex", "-1");
+        skipLink.setAttribute("href", "#likeButton");
 
         hero.style.display = "none";
         detailContainer.innerHTML = createRestaurantDetailTemplate(resto);
+
         LikeButtonInitiator.init({
             likeButtonContainer: document.querySelector(".like_button"),
             restaurant: {

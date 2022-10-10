@@ -1,5 +1,5 @@
-import API_ENDPOINT from "../globals/api-endpoint";
-import errorPage from "../views/pages/errorPage";
+import API_ENDPOINT from "../globals/api-endpoint.js";
+import errorPage from "../views/pages/errorPage.js";
 
 class RestaurantDbSource {
     static async restaurantList() {
@@ -14,7 +14,7 @@ class RestaurantDbSource {
             const responseJson = await response.json();
             return responseJson.restaurant;
         } catch (error) {
-            errorPage(error.message);
+            return errorPage(error.message);
         }
     }
 

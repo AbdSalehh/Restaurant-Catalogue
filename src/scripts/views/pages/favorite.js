@@ -1,5 +1,5 @@
-import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb";
-import { createRestaurantListTemplate } from "../templates/template-creator";
+import FavoriteRestaurantIdb from "../../data/favorite-restaurant-idb.js";
+import { createRestaurantListTemplate } from "../templates/template-creator.js";
 
 const Favorite = {
     async render() {
@@ -16,6 +16,11 @@ const Favorite = {
         const contentLabelMenu = document.querySelector(".menuLabel");
         const anotherRestaurants = document.querySelector(".another-restaurants");
         const menu = document.querySelector(".service");
+        const skipLink = document.querySelector("skip-to-content>a");
+        const mainContent = document.querySelector("#main-post");
+
+        mainContent.setAttribute("tabindex", "-1");
+        skipLink.setAttribute("href", "#main-post");
 
         restoList.style.marginTop = "110px";
         hero.style.display = "none";

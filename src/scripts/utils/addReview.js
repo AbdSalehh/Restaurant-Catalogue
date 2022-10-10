@@ -1,5 +1,5 @@
-import RestaurantDbSource from "../data/restaurantdb-source";
-import cardReview from "../component/addReview";
+import RestaurantDbSource from "../data/restaurantdb-source.js";
+import cardReview from "../component/addReview.js";
 
 const postReview = async ({ url, name, review }) => {
     const userInputData = {

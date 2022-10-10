@@ -1,6 +1,6 @@
-import RestaurantDbSource from "../../data/restaurantdb-source";
-import { createRestaurantListTemplate } from "../templates/template-creator";
-import CONFIG from "../../globals/config";
+import RestaurantDbSource from "../../data/restaurantdb-source.js";
+import { createRestaurantListTemplate } from "../templates/template-creator.js";
+import CONFIG from "../../globals/config.js";
 
 const Home = {
     async render() {
@@ -15,8 +15,13 @@ const Home = {
         const secondRecommendation = document.querySelector(".middle");
         const thirdRecommendation = document.querySelector(".third");
         const restoList = document.querySelector(".posts");
-
+        const skipLink = document.querySelector("skip-to-content>a");
         const hero = document.querySelector("hero-bar");
+        const mainContent = document.querySelector("#main-post");
+
+        mainContent.setAttribute("tabindex", "-1");
+        skipLink.setAttribute("href", "#main-post");
+
         hero.style.display = "block";
         restaurants.forEach((restaurant) => {
             if (restaurant.rating < 4.8) {
