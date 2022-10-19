@@ -1,0 +1,364 @@
+@media screen and (max-width: 1160px) {
+    .restaurant_img {
+        width: 50%;
+        max-height: 380px;
+    }
+
+    .restaurant_detail {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1149px) {
+    .card-content p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+    }
+}
+
+@media screen and (max-width: 1112px) {
+    .restaurant_item {
+        flex-direction: column;
+    }
+
+    .restaurant_img {
+        width: 100%;
+        height: 400px;
+    }
+
+    .restaurant_img img {
+        height: 100%;
+        position: block;
+    }
+
+    .restaurant_detail {
+        width: 100%;
+        padding: 0;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 1074px) {
+    .error-page__content {
+        padding: 0 70px 0 70px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .error-page__content {
+        padding: 0 50px 0 50px;
+    }
+}
+
+@media screen and (max-width: 1030px) {
+    .error-page__content {
+        padding: 0 30px 0 30px;
+    }
+
+    .error-page__content img {
+        max-width: 350px;
+        max-height: 350px;
+    }
+
+    .error-page__title {
+        font-size: 25px;
+    }
+
+    .error-page__message {
+        font-size: 17px;
+    }
+
+    .error-page__desc {
+        font-size: 17px;
+    }
+
+    .click-here {
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .recommendation {
+        flex-direction: column;
+        padding: 30px 0 30px 0;
+    }
+
+    .recommendation img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .card-content {
+        width: 100%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    nav {
+        padding: 15px 80px 15px 80px;
+    }
+
+    .content {
+        padding: 0px 80px 0px 80px;
+    }
+
+    .another-restaurants {
+        padding: 20px 80px 20px 80px;
+    }
+
+    .posts,
+    .service {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .detail_container {
+        padding: 120px 80px 120px 80px;
+    }
+
+    .container {
+        padding: 0px 60px 0px 60px;
+    }
+}
+
+@media screen and (max-width: 879px) {
+    .card_review {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    nav {
+        padding: 15px 60px 15px 60px;
+    }
+
+    .content {
+        padding: 0 60px 0 60px;
+    }
+
+    .another-restaurants {
+        padding: 20px 60px 20px 60px;
+    }
+
+    .detail_container {
+        padding: 120px 60px 120px 60px;
+    }
+
+    .container {
+        padding: 0 40px 0 40px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .hero__title, .hero__tagline {
+        padding: 0 20px 0 20px;
+    }
+}
+
+@media screen and (max-width: 772px) {
+    .error-page__content img {
+        max-width: 300px;
+        max-height: 300px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    nav {
+        padding: 15px 40px 15px 40px;
+    }
+
+    .content {
+        padding: 0px 40px 0px 40px;
+    }
+
+    .another-restaurants {
+        padding: 20px 40px 20px 40px;
+    }
+
+    .detail_container {
+        padding: 120px 40px 120px 40px;
+    }
+
+    .container {
+        padding: 0px 20px 0px 20px;
+    }
+}
+
+@media screen and (max-width: 708px) {
+    .restaurant_img {
+        height: 300px;
+    }
+}
+
+@media screen and (max-width: 680px) {
+
+    #hamburger {
+        display: block;
+    }
+
+    nav ul {
+        top: 98px;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        background: #fff;
+        right: -100%;
+        transition: all 0.3s ease;
+    }
+
+    nav ul.open {
+        display: block;
+        right: 0;
+        transition: right 0.3s ease;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 30px 0px 30px 0px;
+        line-height: 30px;
+        border-bottom: 1px solid #e7e7e7;
+    }
+
+    nav ul li a {
+        font-size: 20px;
+        color: black;
+        margin-left: 5px;
+        display: none;
+    }
+
+    nav ul.open li a {
+        display: block;
+    }
+
+}
+
+@media screen and (max-width: 677px) {
+    nav {
+        padding: 15px 30px 15px 30px;
+    }
+
+    .content {
+        padding: 0 30px 0 25px;
+    }
+
+    .another-restaurants {
+        padding: 20px 30px 20px 25px;
+    }
+
+    .detail_container {
+        padding: 120px 30px 120px 30px;
+    }
+
+    .container {
+        padding: 0 10px 0 10px;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 672px) {
+    .error-page__message {
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .error-page__content {
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .error-page__title {
+        margin-top: 10px;
+    }
+
+    .error-page__content img {
+        margin-top: 40px;
+    }
+
+    .error-page__content__text button {
+        margin-bottom: 40px;
+    }
+
+}
+
+@media screen and (max-width: 650px) {
+    .add_review .submit {
+        width: 75%;
+    }
+
+    .add_review input,
+    textarea {
+        width: 75%;
+    }
+
+    .add_review input {
+        max-width: 50%;
+    }
+
+    .add_review textarea {
+        max-width: 75%;
+    }
+}
+
+@media screen and (max-width: 588px) {
+    .hero__title {
+        font-size: 25px;
+    }
+
+    .hero__tagline {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 566px) {
+    .posts {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 545px) {
+    .card_review {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .restaurant_img {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .service {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media screen and (max-width: 488px) {
+    .add_review .submit {
+        width: 100%;
+    }
+
+    .add_review input,
+    textarea {
+        width: 100%;
+    }
+
+    .add_review input {
+        max-width: 75%;
+    }
+
+    .add_review textarea {
+        max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .restaurant_img {
+        height: 200px;
+    }
+}
