@@ -1,8 +1,8 @@
 const errorPage = (error) => {
-    const body = document.querySelector("body");
-    const errorPg = document.createElement("div");
-    errorPg.setAttribute("class", "error-page");
-    body.innerHTML = "";
+    const body = document.querySelector('body');
+    const errorPg = document.createElement('div');
+    errorPg.setAttribute('class', 'error-page');
+    body.innerHTML = '';
     errorPg.innerHTML = `
         <div class="error-page__content">
             <div class="error-page__content__text">
@@ -12,7 +12,7 @@ const errorPage = (error) => {
                 <p class="click-here">Click the reload button below to refresh the page</p>
                 <button onclick="window.location.reload()">Refresh</button>
             </div>
-            <img src="../../../public/images/error.webp" alt="404">
+            <img src="../../../public/images/illustrations/error.webp" alt="404">
         </div>
     `;
     body.appendChild(errorPg);

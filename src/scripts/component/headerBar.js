@@ -21,4 +21,4 @@ class headerBar extends HTMLElement {
     }
 }
 
-customElements.define("header-bar", headerBar);
+customElements.define('header-bar', headerBar);

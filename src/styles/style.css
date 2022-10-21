@@ -109,7 +109,7 @@ nav li a {
   min-height: 500px;
   width: 100%;
   text-align: center;
-  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../public/images/heros/hero-image_1.jpg");
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../public/images/heros/hero-image_1-max.jpg");
   background-position: center;
   background-color: green;
 }
@@ -241,6 +241,10 @@ main:focus {
   gap: 18px 16px;
 }
 
+#posts{
+  margin-top: 40px !important;
+}
+
 /*
 * post item
 */
@@ -304,18 +308,18 @@ main:focus {
   text-decoration: none;
 }
 
-.post-item__title {
+.post-item__content .restaurant_name {
   font-weight: 600;
   font-size: 18px;
   margin-top: 16px;
   transition: 0.3s opacity;
 }
 
-.post-item__title:hover {
+.post-item__content .restaurant_name:hover {
   opacity: 0.5;
 }
 
-.post-item__title a {
+.post-item__content .restaurant_name a {
   text-decoration: none;
   color: inherit;
   padding: 10px 0 10px 0;
@@ -545,7 +549,7 @@ main:focus {
   padding: 0 0 0 20px;
 }
 
-.restaurant_name {
+.restaurant_detail .restaurant_name {
   margin-top: -10px;
   font-size: 30px;
   font-weight: 600;
@@ -699,6 +703,80 @@ textarea {
 .submit button:hover,
 .submit button:focus {
   background-color: #2E4053;
+}
+
+.fav-card{
+  margin-top: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #F8F9F9;
+  border-radius: 7px;
+  padding: 9px 15px 9px 15px;
+}
+
+.fav-title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.search-container {
+  display: flex;
+  height: 44px;
+  background-color: white;
+  border-radius: 40px;
+  padding: 7px;
+  align-items: center;
+}
+
+#searchIcon {
+  font-size: 14px;
+  background: #F8F9F9;
+  padding: 5px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#searchIcon i {
+  font-size: 17px;
+  color: #1B2631;
+}
+
+.fav-card input{
+  border: none;
+  background: none;
+  outline: none;
+  color: #1B2631;
+  font-size: 13px;
+  padding: 12px;
+  width: 85%;
+  border-radius: 25px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.restaurantIsEmpty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.restaurantIsEmpty img{
+  margin-top: -80px;
+  width: 500px;
+}
+
+.restaurantIsEmpty p {
+  font-size: 23px;
+  font-weight: 600;
+  text-align: center;
+  color:#839192;
+  margin-top: -60px;
 }
 
 /* error page */

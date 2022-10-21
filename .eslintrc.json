@@ -1,9 +1,15 @@
 {
     "env": {
         "browser": true,
-        "es2021": true
+        "es2021": true,
+        "node":true,
+        "jasmine": true,
+        "codeceptjs/codeceptjs": true
     },
-    "extends": "airbnb-base",
+    "extends": [
+        "airbnb-base",
+        "plugin:codeceptjs/recommended"
+    ],
     "overrides": [
     ],
     "parserOptions": {
@@ -11,14 +17,24 @@
         "sourceType": "module"
     },
     "rules": {
-        "quotes": ["error", "double"],
         "indent"           : [1, 4],
         "linebreak-style": 0,
-        "no-underscore-dangle": "off",
-        "import/no-extraneous-dependencies": ["error", {"optionalDependencies": false}],
+        "no-underscore-dangle": 0,
+        "import/no-extraneous-dependencies": 0,
         "import/extensions": ["error", "ignorePackages", {"js" : "always"}],
-        "no-console": "off",
-        "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
-        "no-restricted-globals": ["error", "event", "fdescribe"]
-    }
+        "no-console": 0,
+        "consistent-return": 0,
+        "no-restricted-globals": 0,
+        "no-prototype-builtins": 0,
+        "import/prefer-default-export": 0,
+        "no-return-assign": 0,
+        "class-methods-use-this": 0,
+        "no-new": 0,
+        "no-plusplus": 0,
+        "no-await-in-loop": 0,
+        "no-undef": 0,
+        "eqeqeq":0,
+        "max-len":0
+    },
+    "plugins": ["jasmine", "codeceptjs"]
 }

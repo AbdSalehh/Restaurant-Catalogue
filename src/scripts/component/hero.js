@@ -16,4 +16,4 @@ class Hero extends HTMLElement {
     }
 }
 
-customElements.define("hero-bar", Hero);
+customElements.define('hero-bar', Hero);

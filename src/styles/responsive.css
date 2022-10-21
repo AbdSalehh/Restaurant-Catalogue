@@ -1,3 +1,9 @@
+@media screen and (max-width: 1200px) {
+    .hero {
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../public/images/heros/hero-image_1-large.jpg");
+    }
+}
+
 @media screen and (max-width: 1160px) {
     .restaurant_img {
         width: 50%;
@@ -304,6 +310,26 @@
     }
 }
 
+@media screen and (max-width: 600px) {
+    .hero {
+        background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("../public/images/heros/hero-image_1-small.jpg");
+    }
+
+    .fav-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .restaurantIsEmpty img {
+        margin-top: -50px;
+        width: 400px;
+    }
+
+    .restaurantIsEmpty p {
+        margin-top: -40px;
+    }
+}
+
 @media screen and (max-width: 588px) {
     .hero__title {
         font-size: 25px;
@@ -360,5 +386,20 @@
 @media screen and (max-width: 420px) {
     .restaurant_img {
         height: 200px;
+    }
+
+    .restaurantIsEmpty img {
+        width: 350px;
+    }
+
+    .restaurantIsEmpty p {
+        font-size: 18px;
+        margin-top: -30px;
+    }
+}
+
+@media screen and (max-width: 385px) {
+    .fav-title{
+        font-size: 20px;
     }
 }

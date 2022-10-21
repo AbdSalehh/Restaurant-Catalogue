@@ -1,5 +1,5 @@
-import API_ENDPOINT from "../globals/api-endpoint.js";
-import errorPage from "../views/pages/errorPage.js";
+import API_ENDPOINT from '../globals/api-endpoint.js';
+import errorPage from '../views/pages/errorPage.js';
 
 class RestaurantDbSource {
     static async restaurantList() {
@@ -20,9 +20,9 @@ class RestaurantDbSource {
 
     static async postReviewRestaurant(data) {
         const response = await fetch(API_ENDPOINT.POST_REVIEW, {
-            method: "POST",
+            method: 'POST',
             headers: {
-                "Content-Type": "application/json",
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(data),
         });

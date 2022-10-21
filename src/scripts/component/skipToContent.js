@@ -10,4 +10,4 @@ class skipToContent extends HTMLElement {
     }
 }
 
-customElements.define("skip-to-content", skipToContent);
+customElements.define('skip-to-content', skipToContent);

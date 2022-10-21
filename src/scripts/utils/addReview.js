@@ -1,5 +1,5 @@
-import RestaurantDbSource from "../data/restaurantdb-source.js";
-import cardReview from "../component/addReview.js";
+import RestaurantDbSource from '../data/restaurantdb-source.js';
+import cardReview from '../component/addReview.js';
 
 const postReview = async ({ url, name, review }) => {
     const userInputData = {
@@ -8,9 +8,9 @@ const postReview = async ({ url, name, review }) => {
         review,
     };
 
-    const reviewContainer = document.querySelector(".card_review");
+    const reviewContainer = document.querySelector('.card_review');
     const restaurant = await RestaurantDbSource.postReviewRestaurant(userInputData);
-    reviewContainer.innerHTML = restaurant.customerReviews.map((reviewData) => cardReview(reviewData)).join("");
+    reviewContainer.innerHTML = restaurant.customerReviews.map((reviewData) => cardReview(reviewData)).join('');
 };
 
 export default postReview;

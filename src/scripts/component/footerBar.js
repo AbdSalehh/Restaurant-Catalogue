@@ -22,4 +22,4 @@ class footerBar extends HTMLElement {
     }
 }
 
-customElements.define("footer-bar", footerBar);
+customElements.define('footer-bar', footerBar);

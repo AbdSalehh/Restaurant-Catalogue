@@ -10,4 +10,4 @@ class restaurantDetail extends HTMLElement {
     }
 }
 
-customElements.define("restaurant-detail", restaurantDetail);
+customElements.define('restaurant-detail', restaurantDetail);

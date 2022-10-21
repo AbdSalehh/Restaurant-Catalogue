@@ -1,15 +1,17 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const FaviconsWebpackPlugin = require("favicons-webpack-plugin");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const ImageminMozjpeg = require('imagemin-mozjpeg');
 
 module.exports = {
     entry: {
-        app: path.resolve(__dirname, "src/scripts/index.js"),
+        app: path.resolve(__dirname, 'src/scripts/index.js'),
     },
     output: {
-        filename: "[name].bundle.js",
-        path: path.resolve(__dirname, "dist"),
+        filename: '[name].bundle.js',
+        path: path.resolve(__dirname, 'dist'),
         clean: true,
     },
     devServer: {
@@ -26,20 +28,20 @@ module.exports = {
                 test: /\.css$/,
                 use: [
                     {
-                        loader: "style-loader",
+                        loader: 'style-loader',
                     },
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                     },
                 ],
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/,
-                dependency: { not: ["url"] },
-                type: "asset/resource",
+                dependency: { not: ['url'] },
+                type: 'asset/resource',
                 use: [
                     {
-                        loader: "file-loader",
+                        loader: 'file-loader',
                     },
                 ],
             },
@@ -47,19 +49,31 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: "index.html",
-            template: path.resolve(__dirname, "src/templates/index.html"),
+            filename: 'index.html',
+            template: path.resolve(__dirname, 'src/templates/index.html'),
         }),
         new CopyWebpackPlugin({
             patterns: [
                 {
-                    from: path.resolve(__dirname, "src/public/"),
-                    to: path.resolve(__dirname, "dist/public/"),
+                    from: path.resolve(__dirname, 'src/public/'),
+                    to: path.resolve(__dirname, 'dist/public/'),
+                    globOptions: {
+                        // CopyWebpackPlugin mengabaikan berkas yang berada di dalam folder images
+                        ignore: ['**/images/**'],
+                    },
                 },
             ],
         }),
         new FaviconsWebpackPlugin({
-            logo: path.resolve(__dirname, "src/public/images/logo-transparant.png"),
+            logo: path.resolve(__dirname, 'src/public/images/logo-transparant.png'),
+        }),
+        new ImageminWebpackPlugin({
+            plugins: [
+                ImageminMozjpeg({
+                    quality: 50,
+                    progressive: true,
+                }),
+            ],
         }),
     ],
 };

@@ -41,4 +41,4 @@ class contentList extends HTMLElement {
     }
 }
 
-customElements.define("content-list", contentList);
+customElements.define('content-list', contentList);
