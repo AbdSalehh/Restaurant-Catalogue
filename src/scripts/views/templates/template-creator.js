@@ -1,5 +1,9 @@
 import CONFIG from '../../globals/config.js';
 
+const small = 'small/';
+const medium = 'medium/';
+const large = 'large/';
+
 const createRestaurantDetailTemplate = (restaurant) => `
     <div class="detail">
         <div class="restaurant_item">
@@ -7,7 +11,11 @@ const createRestaurantDetailTemplate = (restaurant) => `
                 <div class="button">
                     <div class="like_button"></div>
                 </div>
-                <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Restaurant Image">
+                <picture>
+                    <source class="lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + small + restaurant.pictureId}">
+                    <source class="lazyload" media="(max-width: 1200px)" srcset="${CONFIG.BASE_IMAGE_URL + medium + restaurant.pictureId}">
+                    <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + large + restaurant.pictureId}" alt="Restoran ${restaurant.name || '-'} Kota ${restaurant.city}" width="100" height="333">
+                </picture>
             </div>
             <div class="restaurant_detail">
                 <div class="restaurant_name">${restaurant.name}</div>
@@ -56,10 +64,32 @@ const createRestaurantDetailTemplate = (restaurant) => `
     </form>
 `;
 
+const createSkeletonRestaurantTemplate = (count) => {
+    let template = '';
+
+    for (let i = 0; i < count; i += 1) {
+        template += `
+      <article class="post-item" >
+        <img class="post-item__thumbnail lazyload" src="../../../public/images/placeholder.png" alt="skeleton" width="100%" height="350px">
+        <div class="post-item__content">
+            <p class="skeleton">Lorem ipsum</p>
+            <h1 class="skeleton">Lorem ipsum dolor sit amet</h1>
+            <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci</p>
+        </div>
+    </article>
+    `;
+    }
+    return template;
+};
+
 const createRestaurantListTemplate = (restaurant) => `
     <article class="post-item" >
         <p class="location">Kota. ${restaurant.city || '-'}</p>
-        <img class="post-item__thumbnail lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="Restoran ${restaurant.name || '-'} Kota ${restaurant.city}">
+        <picture>
+            <source class="lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + small + restaurant.pictureId}">
+            <source class="lazyload" media="(max-width: 1200px)" srcset="${CONFIG.BASE_IMAGE_URL + medium + restaurant.pictureId}">
+            <img class="post-item__thumbnail lazyload" src="${CONFIG.BASE_IMAGE_URL + large + restaurant.pictureId}" alt="Restoran ${restaurant.name || '-'} Kota ${restaurant.city}">
+        </picture>
         <div class="post-item__content">
             <p class="post-item__date">Rating : <i class="fa-solid fa-star"></i><span> ${restaurant.rating || '-'}</span></p>
             <h1 class="restaurant_name"><a href="/#/detail/${restaurant.id}">${restaurant.name || '-'}</a></h1>
@@ -83,6 +113,7 @@ const createUnlikeRestaurantButtonTemplate = () => `
 export {
     createRestaurantListTemplate,
     createRestaurantDetailTemplate,
+    createSkeletonRestaurantTemplate,
     createLikeRestaurantButtonTemplate,
     createUnlikeRestaurantButtonTemplate,
 };

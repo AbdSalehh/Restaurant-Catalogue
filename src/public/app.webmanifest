@@ -1,8 +1,8 @@
 {
   "id": "restaurant-catalogue-lite-pwa-1",
   "start_url": "./index.html",
-  "name": "Hunger App Lite",
-  "short_name": "Hunger App",
+  "name": "Restaurants Catalogue",
+  "short_name": "Resto Catalogue",
   "description": "List Restaurant Movie for you",
   "display": "standalone",
   "background_color": "#FFFFFF",

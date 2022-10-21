@@ -8,11 +8,11 @@ Before((I) => {
 
 Scenario('showing empty liked restaurants', (I) => {
     I.seeElement('#query');
-    I.see('Tidak ada film untuk ditampilkan', '.restaurantIsEmpty');
+    I.see('Oops.. Restaurant is empty', '.restaurantIsEmpty p');
 });
 
 Scenario('liking one restaurant', async (I) => {
-    I.see('Tidak ada film untuk ditampilkan', '.restaurantIsEmpty');
+    I.see('Oops.. Restaurant is empty', '.restaurantIsEmpty p');
 
     I.amOnPage('/');
 
@@ -33,7 +33,7 @@ Scenario('liking one restaurant', async (I) => {
 });
 
 Scenario('unliking one restaurant', async (I) => {
-    I.see('Tidak ada film untuk ditampilkan', '.restaurantIsEmpty');
+    I.see('Oops.. Restaurant is empty', '.restaurantIsEmpty p');
 
     I.amOnPage('/');
 
@@ -59,12 +59,12 @@ Scenario('unliking one restaurant', async (I) => {
 
     I.amOnPage('/#/favorite');
 
-    const FavoriteRestaurantIsEmpty = await I.grabTextFrom('.restaurantIsEmpty');
-    assert.strictEqual('Tidak ada film untuk ditampilkan', FavoriteRestaurantIsEmpty);
+    const FavoriteRestaurantIsEmpty = await I.grabTextFrom('.restaurantIsEmpty p');
+    assert.strictEqual('Oops.. Restaurant is empty', FavoriteRestaurantIsEmpty);
 });
 
 Scenario('Add Review', async (I) => {
-    I.see('Tidak ada film untuk ditampilkan', '.restaurantIsEmpty');
+    I.see('Oops.. Restaurant is empty', '.restaurantIsEmpty p');
 
     I.amOnPage('/');
 
@@ -90,7 +90,7 @@ Scenario('Add Review', async (I) => {
 });
 
 Scenario('searching restaurants', async (I) => {
-    I.see('Tidak ada film untuk ditampilkan', '.restaurantIsEmpty');
+    I.see('Oops.. Restaurant is empty', '.restaurantIsEmpty p');
 
     I.amOnPage('/');
 

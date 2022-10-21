@@ -47,7 +47,7 @@ class FavoriteRestaurantSearchView {
             }
         </style>
         <div class="restaurantIsEmpty">
-            <img src="../../../../public/images/illustrations/Waiters.webp" alt="Restaurant is empty">
+            <img src="../../../../public/images/Waiters.webp" alt="Restaurant is empty" width="500px" height="500px">
             <p>Oops.. Restaurant is empty</p>
         </div>`;
     }

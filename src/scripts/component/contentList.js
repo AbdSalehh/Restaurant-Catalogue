@@ -1,3 +1,5 @@
+import { createSkeletonRestaurantTemplate } from '../views/templates/template-creator.js';
+
 class contentList extends HTMLElement {
     connectedCallback() {
         this.render();
@@ -5,9 +7,16 @@ class contentList extends HTMLElement {
 
     render() {
         this.innerHTML = `
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+            <div class="renderImg">
+                <img src="../../public/images/error.webp" alt="404" width="1" height="1">
+                <img src="../../public/images/Waiters.webp" alt="Restaurant is empty" width="1" height="1">
+            </div>
             <div class="content">
                 <h1 class="content__label" id="main-content">Explore Restaurants</h1>
-                <div class="posts"></div>
+                <div class="posts">
+                    ${createSkeletonRestaurantTemplate(17)}
+                </div>
             </div>
             <div class="another-restaurants">
                 <div class="recommendation first"></div>
@@ -33,9 +42,6 @@ class contentList extends HTMLElement {
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard .</p>
                     </div>
                 </div>  
-            </div>
-            <div class="renderImg">
-                <img src="../../../public/images/error.webp" alt="404">
             </div>
         `;
     }

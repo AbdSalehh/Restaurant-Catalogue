@@ -12,7 +12,7 @@ const errorPage = (error) => {
                 <p class="click-here">Click the reload button below to refresh the page</p>
                 <button onclick="window.location.reload()">Refresh</button>
             </div>
-            <img src="../../../public/images/illustrations/error.webp" alt="404">
+            <img src="../../../public/images/error.webp" alt="404">
         </div>
     `;
     body.appendChild(errorPg);
