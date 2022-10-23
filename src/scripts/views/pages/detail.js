@@ -24,6 +24,7 @@ const Detail = {
         skipLink.setAttribute('href', '#likeButton');
 
         hero.style.display = 'none';
+        detailContainer.innerHTML = '';
         detailContainer.innerHTML = createRestaurantDetailTemplate(resto);
 
         LikeButtonPresenter.init({

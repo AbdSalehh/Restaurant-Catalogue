@@ -32,9 +32,10 @@ const Home = {
         restaurants.forEach((restaurant) => {
             const template = `
                 <picture>
-                    <source class="lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + small + restaurant.pictureId}" width="560" height="350">
-                    <source class="lazyload" media="(max-width: 1200px)" srcset="${CONFIG.BASE_IMAGE_URL + medium + restaurant.pictureId}" width="560" height="350">
-                    <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + large + restaurant.pictureId}" alt="Restoran ${restaurant.name || '-'} Kota ${restaurant.city}"width="560" height="350">
+                    <source class="lazyload" media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMAGE_URL + small + restaurant.pictureId}" width="560" height="350">
+                    <source class="lazyload" media="(max-width: 1200px)" data-srcset="${CONFIG.BASE_IMAGE_URL + medium + restaurant.pictureId}" width="560" height="350">
+                    <img class="lazyload" src="../../../public/images/placeholder.png"
+                        data-src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + large + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="Restoran ${restaurant.name || '-'} Kota ${restaurant.city}" width="560" height="350">
                 </picture>
                 <div class="card-content">
                     <h2>${restaurant.name}</h2>
