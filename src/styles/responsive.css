@@ -405,6 +405,9 @@
     .restaurantIsEmpty img {
         width: 350px;
     }
+    .recommendation img {
+        height: 220px !important;
+    }
 
     .restaurantIsEmpty p {
         font-size: 18px;
