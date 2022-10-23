@@ -12,9 +12,10 @@ const createRestaurantDetailTemplate = (restaurant) => `
                     <div class="like_button"></div>
                 </div>
                 <picture>
-                    <source class="lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + small + restaurant.pictureId}">
-                    <source class="lazyload" media="(max-width: 1200px)" srcset="${CONFIG.BASE_IMAGE_URL + medium + restaurant.pictureId}">
-                    <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + large + restaurant.pictureId}" alt="Restoran ${restaurant.name || '-'} Kota ${restaurant.city}" width="100" height="333">
+                    <source class="lazyload" media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMAGE_URL + small + restaurant.pictureId}">
+                    <source class="lazyload" media="(max-width: 1200px)" data-srcset="${CONFIG.BASE_IMAGE_URL + medium + restaurant.pictureId}">
+                    <img class="lazyload" src="../../../public/images/placeholder.png"
+                        data-src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + large + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="Restoran ${restaurant.name || '-'} Kota ${restaurant.city}">
                 </picture>
             </div>
             <div class="restaurant_detail">
@@ -69,16 +70,41 @@ const createSkeletonRestaurantTemplate = (count) => {
 
     for (let i = 0; i < count; i += 1) {
         template += `
-      <article class="post-item" >
-        <img class="post-item__thumbnail lazyload" src="../../../public/images/placeholder.png" alt="skeleton" width="100%" height="350px">
-        <div class="post-item__content">
-            <p class="skeleton">Lorem ipsum</p>
-            <h1 class="skeleton">Lorem ipsum dolor sit amet</h1>
-            <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci</p>
-        </div>
-    </article>
+        <article class="post-item" >
+            <img class="post-item__thumbnail" src="../../../public/images/placeholder.png" alt="skeleton" width="100%" height="350px">
+            <div class="post-item__content">
+                <p class="skeleton">Lorem ipsum</p>
+                <h1 class="skeleton">Lorem ipsum dolor sit amet</h1>
+                <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci</p>
+            </div>
+        </article>
     `;
     }
+    return template;
+};
+
+const createSkeletonRestaurantDetail = () => {
+    let template = '';
+
+    template += `
+        <div class="detail">
+            <div class="restaurant_item">
+                <div class="restaurant_img">
+                    <img src="../../../public/images/placeholder.png" alt="skeleton">
+                </div>
+                <div class="restaurant_detail">
+                    <div class="skeleton">Lorem ipsum</div>
+                    <p class="skeleton">Lorem ipsum dolor sit amet</p>
+                    <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci</p>
+                    <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci</p>
+                    <p class="skeleton">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis</p>
+                </div>
+            </div>
+            <div class="restaurant_desc">
+                <p class="skeleton">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+            </div>
+        </div>
+    `;
     return template;
 };
 
@@ -86,9 +112,10 @@ const createRestaurantListTemplate = (restaurant) => `
     <article class="post-item" >
         <p class="location">Kota. ${restaurant.city || '-'}</p>
         <picture>
-            <source class="lazyload" media="(max-width: 600px)" srcset="${CONFIG.BASE_IMAGE_URL + small + restaurant.pictureId}">
-            <source class="lazyload" media="(max-width: 1200px)" srcset="${CONFIG.BASE_IMAGE_URL + medium + restaurant.pictureId}">
-            <img class="post-item__thumbnail lazyload" src="${CONFIG.BASE_IMAGE_URL + large + restaurant.pictureId}" alt="Restoran ${restaurant.name || '-'} Kota ${restaurant.city}">
+            <source class="lazyload" media="(max-width: 600px)" data-srcset="${CONFIG.BASE_IMAGE_URL + small + restaurant.pictureId}">
+            <source class="lazyload" media="(max-width: 1200px)" data-srcset="${CONFIG.BASE_IMAGE_URL + medium + restaurant.pictureId}">
+            <img class="post-item__thumbnail lazyload" src="../../../public/images/placeholder.png"
+                data-src="${restaurant.pictureId ? CONFIG.BASE_IMAGE_URL + large + restaurant.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" alt="Restoran ${restaurant.name || '-'} Kota ${restaurant.city}">
         </picture>
         <div class="post-item__content">
             <p class="post-item__date">Rating : <i class="fa-solid fa-star"></i><span> ${restaurant.rating || '-'}</span></p>
@@ -116,4 +143,5 @@ export {
     createSkeletonRestaurantTemplate,
     createLikeRestaurantButtonTemplate,
     createUnlikeRestaurantButtonTemplate,
+    createSkeletonRestaurantDetail,
 };
