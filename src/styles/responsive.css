@@ -344,6 +344,10 @@
     .posts {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .recommendation img {
+        height: 300px !important;
+    }
 }
 
 @media screen and (max-width: 545px) {
@@ -361,6 +365,10 @@
 @media screen and (max-width: 500px) {
     .service {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .recommendation img {
+        height: 270px !important;
     }
 }
 
@@ -380,6 +388,12 @@
 
     .add_review textarea {
         max-width: 100%;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .recommendation img {
+        height: 250px !important;
     }
 }
 
