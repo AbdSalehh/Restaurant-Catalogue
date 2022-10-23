@@ -344,6 +344,10 @@
     .posts {
         grid-template-columns: repeat(1, 1fr);
     }
+
+    .recommendation img {
+        height: 300px !important;
+    }
 }
 
 @media screen and (max-width: 545px) {
@@ -361,6 +365,10 @@
 @media screen and (max-width: 500px) {
     .service {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .recommendation img {
+        height: 270px !important;
     }
 }
 
@@ -383,6 +391,12 @@
     }
 }
 
+@media screen and (max-width: 450px) {
+    .recommendation img {
+        height: 250px !important;
+    }
+}
+
 @media screen and (max-width: 420px) {
     .restaurant_img {
         height: 200px;
@@ -390,6 +404,9 @@
 
     .restaurantIsEmpty img {
         width: 350px;
+    }
+    .recommendation img {
+        height: 220px !important;
     }
 
     .restaurantIsEmpty p {
